@@ -3,8 +3,8 @@ import unittest
 from problem1 import print_depth
 
 
-class TestSum(unittest.TestCase):
-    def test_list_int(self):
+class TestDepth(unittest.TestCase):
+    def test_depth(self):
         a = {
             "key1": 1,
             "key2": {
