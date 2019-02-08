@@ -1,26 +1,18 @@
 import unittest
 
-from problem3 import Node, lca
+from problem3 import  lca
 
 
 class LCATest(unittest.TestCase):
 
-    def lca_test(self):
-        root = Node(1)
-        root.left = Node(2)
-        root.right = Node(3)
-        root.left.left = Node(4)
-        root.left.right = Node(5)
-        root.right.left = Node(6)
-        root.right.right = Node(7)
-        root.left.left.left = Node(8)
-        root.left.left.right = Node(9)
+    def test_node4_5(self):
+        self.assertEqual(lca(4, 5), 2)
+
+    def test_node6_2(self):
+        self.assertEqual(lca(6, 2), 1)
 
 
-        lca(1, 5)
-        lca(1, 3)
-        lca(4, 3)
-
+      
 
 if __name__ == '__main__':
     unittest.main()

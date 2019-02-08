@@ -8,6 +8,7 @@ class PersonTestDepth(unittest.TestCase):
     def person_test_depth(self):
         person_a = Person("User", "1", "s")
         person_b = Person("User", "2", person_a)
+        person_c = Person("User", "2", person_b)
         a = {
             "key1": 1,
             "key2": {
@@ -17,7 +18,7 @@ class PersonTestDepth(unittest.TestCase):
                     "key6": {
                         "key7": 4,
                     },
-                    "user": person_b,
+                    "user": person_c,
                     "user1": person_a,
                 }
             }
