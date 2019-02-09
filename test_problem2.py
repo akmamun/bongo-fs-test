@@ -1,30 +1,18 @@
 import unittest
-
-from problem2 import Person, print_depth
-
+from problem2 import print_depth
 
 class PersonTestDepth(unittest.TestCase):
+    def test_depth_one(self):
+        a = {"key1": 1}
 
-    def person_test_depth(self):
-        person_a = Person("User", "1", "s")
-        person_b = Person("User", "2", person_a)
-        person_c = Person("User", "2", person_b)
-        a = {
-            "key1": 1,
-            "key2": {
-                "key3": 1,
-                "key4": {
-                    "key5": 4,
-                    "key6": {
-                        "key7": 4,
-                    },
-                    "user": person_c,
-                    "user1": person_a,
-                }
-            }
-        }
+        self.assertEqual(print_depth(a), 1)
 
-        print_depth(a)
+    def test_depth_two(self):
+        a = {"key1": {
+            "key2": 2
+        }}
+
+        self.assertEqual(print_depth(a), 2)
 
 
 if __name__ == '__main__':

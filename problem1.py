@@ -11,6 +11,7 @@ def print_depth(data):
         b += 1
         n, depth = q.pop()
         q = q + [(i, depth + 1) for i in n.values() if isinstance(i, dict)]
+    return depth
 
 
 a = {
